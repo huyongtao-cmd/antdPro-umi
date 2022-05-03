@@ -1,0 +1,55 @@
+@primary-color: #2a4791; // 自定义颜色变量
+.myCard {
+  position: relative;
+  :global {
+    .ant-pro-card-title {
+      position: relative;
+      margin-left: 20px;
+
+      &::before {
+        position: absolute;
+        left: -20px;
+        width: 5px;
+        height: 100%;
+        background-color: @primary-color;
+        content: '';
+      }
+    }
+  }
+
+  .cardIcon {
+    position: absolute;
+    top: 17px;
+    left: 17px;
+    width: '5px';
+    height: 100%;
+    // backgroundcardIcon-color: @primary-color;
+  }
+}
+
+.myCardAndIcon {
+  position: relative;
+  :global {
+    .ant-pro-card-title {
+      position: relative;
+      margin-left: 20px;
+
+      &::before {
+        position: absolute;
+        left: -20px;
+        width: 5px;
+        height: 100%;
+        content: '';
+      }
+    }
+  }
+
+  .cardIcon {
+    position: absolute;
+    top: 17px;
+    left: 17px;
+    width: '5px';
+    height: 100%;
+    // backgroundcardIcon-color: @primary-color;
+  }
+}

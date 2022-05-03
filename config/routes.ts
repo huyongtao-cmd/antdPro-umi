@@ -49,6 +49,24 @@
     component: './TableList',
   },
   {
+    name: 'demoPage',
+    path: '/demo',
+    icon: 'EditOutlined',
+    component: './demo'
+  },
+  /* {
+    name: 'basicEditor',
+    icon: 'crown',
+    path: '/basicEditor',
+    component: './basicEditor',
+  }, */
+  {
+    name: 'editor1',
+    icon: 'crown',
+    path: '/basicEditor/editor1',
+    component: './basicEditor/Editor1',
+  },
+  {
     path: '/',
     redirect: '/welcome',
   },

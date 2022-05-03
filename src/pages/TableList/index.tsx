@@ -1,7 +1,7 @@
 import { PlusOutlined } from '@ant-design/icons';
 import { Button, message, Input, Drawer } from 'antd';
 import React, { useState, useRef } from 'react';
-import { useIntl, FormattedMessage } from 'umi';
+import { useIntl, FormattedMessage, history } from 'umi';
 import { PageContainer, FooterToolbar } from '@ant-design/pro-layout';
 import type { ProColumns, ActionType } from '@ant-design/pro-table';
 import ProTable from '@ant-design/pro-table';
@@ -105,14 +105,27 @@ const TableList: React.FC = () => {
 
   const columns: ProColumns<API.RuleListItem>[] = [
     {
+      // 定义索引
+      dataIndex: 'index',
+      valueType: 'indexBorder',
+      width: 48
+    },
+    {
       title: (
         <FormattedMessage
           id="pages.searchTable.updateForm.ruleName.nameLabel"
           defaultMessage="Rule name"
         />
       ),
+      copyable: true, // 是否能够复制
+      ellipsis: true, // 是否超出显示省略
       dataIndex: 'name',
-      tip: 'The rule name is the unique key',
+      hideInSearch: true, // 是否隐藏搜索字段
+      hideInTable: false, // 是否在表格里隐藏
+      tip: 'The rule name is the unique key', // 标题过长会自动收缩
+      formItemProps: {
+        rules: [{ required: true, message: '设置必填项' }]
+      },
       render: (dom, entity) => {
         return (
           <a
@@ -247,14 +260,15 @@ const TableList: React.FC = () => {
         actionRef={actionRef}
         rowKey="key"
         search={{
-          labelWidth: 120,
+          labelWidth: 120, // 搜索框的宽度
         }}
         toolBarRender={() => [
           <Button
             type="primary"
             key="primary"
             onClick={() => {
-              handleModalVisible(true);
+              history.push('/demo')
+              // handleModalVisible(true);
             }}
           >
             <PlusOutlined /> <FormattedMessage id="pages.searchTable.new" defaultMessage="New" />
