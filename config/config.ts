@@ -65,7 +65,7 @@ export default defineConfig({
       projectName: 'swagger',
     },
   ],
-  nodeModulesTransform: { type: 'none' },
+  nodeModulesTransform: { type: 'none', exclude: ['exceljs'] },
   mfsu: {},
   webpack5: {},
   exportStatic: {},

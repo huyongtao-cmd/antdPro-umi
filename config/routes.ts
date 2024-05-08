@@ -52,7 +52,7 @@
     name: 'demoPage',
     path: '/demo',
     icon: 'EditOutlined',
-    component: './demo'
+    component: './demo',
   },
   /* {
     name: 'basicEditor',
@@ -65,6 +65,18 @@
     icon: 'crown',
     path: '/basicEditor/editor1',
     component: './basicEditor/Editor1',
+  },
+  {
+    name: 'pdf',
+    icon: 'crown',
+    path: '/pdf',
+    component: './pdf',
+  },
+  {
+    name: 'excel',
+    icon: 'crown',
+    path: '/excel',
+    component: './excel',
   },
   {
     path: '/',
